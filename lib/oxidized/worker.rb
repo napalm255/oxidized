@@ -34,7 +34,9 @@ module Oxidized
         msg = "update #{node.name}"
         msg += " from #{node.from}" if node.from
         msg += " with message '#{node.msg}'" if node.msg
-        node.output.new.store node.name, job.config,
+        file = "#{node.name}" if node.name
+        file = "#{node.alias}" if node.alias
+        node.output.new.store file, job.config,
                               :msg => msg, :user => node.user, :group => node.group
         node.reset
       else
