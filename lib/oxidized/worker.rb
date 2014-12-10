@@ -35,7 +35,7 @@ module Oxidized
         msg += " from #{node.from}" if node.from
         msg += " with message '#{node.msg}'" if node.msg
         file = "#{node.name}" if node.name
-        file = "#{node.alias}" if node.alias
+        file = "#{node.alias}" if node.alias && node.alias != ''
         node.output.new.store file, job.config,
                               :msg => msg, :user => node.user, :group => node.group
         node.reset
