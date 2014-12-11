@@ -303,8 +303,9 @@ The following objects exist in Oxidized.
 ## Source
  * gets list of nodes to poll
  * must implement 'load'
- * source can have 'name', 'model', 'group', 'username', 'password', 'input', 'output', 'prompt'
-   * name - name of the devices
+ * source can have 'alias', 'name', 'model', 'group', 'username', 'password', 'input', 'output', 'prompt'
+   * alias - friendly name of the devices (will override name on output)
+   * name - hostname or ip address of the devices
    * model - model to use ios/junos/xyz, model is loaded dynamically when needed (Also default in config file)
    * input - method to acquire config, loaded dynamically as needed (Also default in config file)
    * output - method to store config, loaded dynamically as needed (Also default in config file)
